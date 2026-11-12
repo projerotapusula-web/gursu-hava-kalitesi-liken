@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gürsu Liken Biyoindikatör Projesi</title>
+<style>
+  :root{
+    --bg:#f6f8f4; --fg:#1e2b1f; --muted:#5b6b5c; --card:#ffffff;
+    --accent:#3f7a4f; --accent-light:#e6f0e6; --border:#dde5db;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#10140f; --fg:#eaf1e7; --muted:#9db19d; --card:#171d15;
+           --accent:#6fb781; --accent-light:#1c2a1c; --border:#28331f; }
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--fg);
+    font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+    line-height:1.55;
+  }
+  header{
+    padding:48px 16px 32px; text-align:center;
+    border-bottom:1px solid var(--border);
+  }
+  header h1{ margin:0 0 8px; font-size:1.7rem; }
+  header p{ margin:0; color:var(--muted); font-size:.95rem; }
+  main{ max-width:760px; margin:0 auto; padding:32px 16px 64px; }
+  section{
+    background:var(--card); border:1px solid var(--border); border-radius:14px;
+    padding:24px; margin-bottom:20px;
+  }
+  section h2{ margin:0 0 6px; font-size:1.1rem; }
+  section .etiket{
+    display:inline-block; font-size:.72rem; font-weight:600; letter-spacing:.03em;
+    color:var(--accent); background:var(--accent-light); border-radius:999px;
+    padding:3px 10px; margin-bottom:10px;
+  }
+  section p{ margin:8px 0 0; color:var(--muted); font-size:.92rem; }
+  footer{ text-align:center; color:var(--muted); font-size:.82rem; padding:24px 16px 48px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Gürsu Liken Biyoindikatör Projesi</h1>
+  <p>TÜBİTAK 2204-A &middot; Gürsu, Bursa &middot; hava kalitesi &amp; liken izleme</p>
+</header>
+<main>
+  <section>
+    <span class="etiket">Hakkında</span>
+    <h2>Proje Özeti</h2>
+    <p>Bu sayfa, Gürsu genelinde yürütülen liken biyoindikatör ve hava kalitesi ölçümlerinin
+       sonuçlarını, kirlilik haritasını ve senaryo hesaplayıcısını tek bir yerde toplamak için
+       hazırlanıyor. İçerik, saha ölçümleri tamamlandıkça buraya eklenecek.</p>
+  </section>
+
+  <section>
+    <span class="etiket">Yakında</span>
+    <h2>Kirlilik Haritası</h2>
+    <p>Ölçüm noktalarının PM2.5, PM10 ve liken puanlarına göre enterpolasyon haritası burada
+       gösterilecek.</p>
+  </section>
+
+  <section>
+    <span class="etiket">Yakında</span>
+    <h2>Senaryo Hesaplayıcısı</h2>
+    <p>"X ağaç dikilirse / trafik %Y azalırsa" girildiğinde tahmini kirlilik değişimini gösteren
+       interaktif araç burada yer alacak.</p>
+  </section>
+
+  <section>
+    <span class="etiket">Yakında</span>
+    <h2>Liken Puanlama Göstergeleri</h2>
+    <p>0-5 liken çeşitlilik puanlamasının nasıl okunacağını ve örnek fotoğrafları gösteren
+       referans bölümü burada olacak.</p>
+  </section>
+</main>
+<footer>
+  Gürsu Bilim ve Sanat Merkezi &middot; TÜBİTAK 2204-A Proje Ekibi
+</footer>
+</body>
+</html>
