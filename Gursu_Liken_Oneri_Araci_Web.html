@@ -14,6 +14,8 @@
   header { background: var(--accent); color: white; padding: 18px 24px; }
   header h1 { margin: 0; font-size: 1.3rem; }
   header p { margin: 4px 0 0; font-size: 0.85rem; opacity: 0.9; }
+  header a.back { display: inline-block; margin-bottom: 8px; color: #e4f0e8; font-weight: 600; font-size: 0.85rem; text-decoration: none; }
+  header a.back:hover { text-decoration: underline; }
   nav { display: flex; flex-wrap: wrap; background: #e7ece8; border-bottom: 2px solid var(--border); position: sticky; top: 0; z-index: 10; }
   nav button { flex: 1 1 auto; padding: 12px 10px; border: none; background: transparent; cursor: pointer; font-size: 0.95rem; font-weight: 600; color: #3a4a4a; border-bottom: 3px solid transparent; }
   nav button.active { background: var(--card); border-bottom-color: var(--accent); color: var(--accent); }
@@ -62,6 +64,7 @@
 </head>
 <body>
 <header>
+  <a class="back" href="index.html">&larr; Ana sayfaya dön</a>
   <h1>Gürsu Liken Biyoindikatör Projesi — Öneri Aracı</h1>
   <p>TÜBİTAK 2204-A — 70 ölçüm noktası, anonimleştirilmiş konum tanımlarıyla</p>
 </header>
