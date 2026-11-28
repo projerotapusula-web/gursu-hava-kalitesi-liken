@@ -86,6 +86,7 @@
 
   <section id="siralama" class="tab active">
     <h2>Öncelik Sıralaması</h2>
+    <div class="caveat"><strong>Önemli:</strong> Buradaki puan, ölçüm noktalarının mevcut veri setindeki <strong>göreli (birbirine kıyasla) sıralamasını</strong> göstermektedir. Mutlak bir hava kalitesi veya sağlık riski değerlendirmesi değildir; bu nedenle "Göreli Çevresel Öncelik Puanı" olarak adlandırılmıştır.</div>
     <div class="filters">
       <div>
         <label>Kategori</label>
@@ -113,7 +114,7 @@
     <table id="siralama-table">
       <thead><tr>
         <th>Sıra</th><th>Nokta No</th><th>Genel Konum Tanımı</th><th>Okul Yakını</th>
-        <th>HCHO (mg/m³)</th><th>TVOC (mg/m³)</th><th>AQI</th><th>Öncelik Puanı</th><th>Öneri</th>
+        <th>HCHO (mg/m³)</th><th>TVOC (mg/m³)</th><th>AQI</th><th>Göreli Öncelik Puanı</th><th>Öneri</th>
       </tr></thead>
       <tbody id="siralama-body"></tbody>
     </table>
@@ -133,8 +134,8 @@
 <p>Bu yöntem bilinçli olarak tercih edilmiştir: ham değerlerin doğrudan 0-10 arasına ölçeklendirilmesi (min-max normalizasyon), veri setindeki birkaç aşırı uç noktanın (örn. Nokta 17) diğer tüm noktaları yapay biçimde "düşük" göstermesine yol açmaktaydı. Yüzdelik dilim yöntemi bu sorunu gidermekte, ikinci derece yüksek noktaları (örn. okul çevresindeki Nokta 19, 33) da görünür kılmaktadır.</p>
 <p>Şeffaflık için ham değerler de tabloda ayrıca gösterilmiştir; örneğin "yüksek öncelik" eşiğine yakın bazı noktaların mutlak değerleri veri setinin en yüksek noktalarından (Nokta 17, 12) belirgin biçimde düşük olabilir — puan göreli bir sıralamadır, mutlak bir kirlilik eşiği değildir.</p>
 
-<h3>4. Öncelik Puanı</h3>
-<p>Her nokta için HCHO, TVOC ve AQI yüzdelik dilim puanlarının ortalaması alınarak 0-10 arası bir "Öncelik Puanı" hesaplanmıştır (10 = en yüksek öncelik).</p>
+<h3>4. Göreli Çevresel Öncelik Puanı</h3>
+<p>Her nokta için HCHO, TVOC ve AQI yüzdelik dilim puanlarının ortalaması alınarak 0-10 arası bir "Göreli Çevresel Öncelik Puanı" hesaplanmıştır (10 = en yüksek göreli öncelik). Bu puan, ölçüm noktalarının yalnızca bu veri setindeki birbirine göre sıralamasını gösterir; mutlak bir hava kalitesi veya sağlık riski ölçütü değildir.</p>
 
 <h3>5. Öneri Eşikleri</h3>
 <p>Puan ≥ 7 → Yüksek Öncelik<br>4 ≤ Puan &lt; 7 → Orta Öncelik<br>Puan &lt; 4 → Düşük Öncelik</p>
@@ -379,7 +380,7 @@ function showPointDetail() {
   const p = priorityInfo(r);
   const div = document.getElementById('point-detail');
   div.innerHTML = `
-    <p><span class="badge ${p.cls}">${p.label}</span> — Puan: ${fmt(r.Oncelik_Puani, 2)}</p>
+    <p><span class="badge ${p.cls}">${p.label}</span> — Göreli Öncelik Puanı: ${fmt(r.Oncelik_Puani, 2)}</p>
     <p><strong>Kategori:</strong> ${r.Kategori} ${r.Okul_Yakini ? '(okul yakını)' : ''}</p>
     <p><strong>HCHO:</strong> ${fmt(r.HCHO)} mg/m³ · <strong>TVOC:</strong> ${fmt(r.TVOC)} mg/m³ · <strong>AQI:</strong> ${fmt(r.AQI,1)}</p>
     <p><strong>Öneri:</strong> ${r.Oneri}</p>
